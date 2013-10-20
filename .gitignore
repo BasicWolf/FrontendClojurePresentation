@@ -1,3 +1,6 @@
+.backups/
+auto/
+*.pdf
 *.acn
 *.acr
 *.alg

@@ -1,0 +1,90 @@
+\begin{frame}
+  \frametitle{Clojure is...}
+  % \framesubtitle{A bit more information about this}
+
+  % \stepcounter{beamerpauses}
+  \setbeamercovered{transparent}
+
+  \begin{itemize}[<+->]
+    \item<1-> A general-purpose Lisp dialect
+    \item<2-> Powerful multithreading capabilities
+    \item<3-> Compiles to JVM bytecode
+    \item<4-> Completely dynamic
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Clojure Literals}
+
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Clojure data structures: Lists and Vectors}
+
+  \begin{block}{Lists}
+    % (1 "Antti" "Joensuu" + - 100)
+    % (+ 1 10 111)
+    \begin{Verbatim}[commandchars=\\\{\}]
+      \PY{p}{(}\PY{p}{)}
+
+      \PY{p}{(}\PY{l+m+mi}{1} \PY{l+s}{\PYZdq{}Antti\PYZdq{}} \PY{l+s}{\PYZdq{}Joensuu\PYZdq{}} \PY{n+nb}{+ }\PY{n+nb}{\PYZhy{} }\PY{l+m+mi}{100}\PY{p}{)}
+
+      \PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{10} \PY{l+m+mi}{100}\PY{p}{)}
+    \end{Verbatim}
+  \end{block}
+
+  \begin{block}{Vectors}
+    \begin{Verbatim}[commandchars=\\\{\}]
+      \PY{p}{[}\PY{p}{]}
+
+      \PY{p}{[}\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{]}
+
+      \PY{p}{[}\PY{l+s}{\PYZdq{}Hello\PYZdq{}} \PY{l+s}{\PYZdq{}World\PYZdq{}} \PY{n+nv}{true} \PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3}\PY{p}{]}
+    \end{Verbatim}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Clojure data structures: Maps and Sets}
+
+  \begin{block}{Maps}
+    % {"Alex" 25 "Billy" 19 "Lauri" 23}
+    \begin{Verbatim}[commandchars=\\\{\}]
+      \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+
+      \PY{p}{\PYZob{}}\PY{l+s}{\PYZdq{}Alex\PYZdq{}} \PY{l+m+mi}{25} \PY{l+s}{\PYZdq{}Billy\PYZdq{}} \PY{l+m+mi}{19} \PY{l+s}{\PYZdq{}Lauri\PYZdq{}} \PY{l+m+mi}{23}\PY{p}{\PYZcb{}}
+
+      \PY{p}{\PYZob{}}\PY{l+s+ss}{:name} \PY{l+s}{\PYZdq{}Alex\PYZdq{}} \PY{l+s+ss}{:age} \PY{l+m+mi}{25} \PY{l+s+ss}{:student} \PY{n+nv}{true}\PY{p}{\PYZcb{}}
+    \end{Verbatim}
+  \end{block}
+
+  % #{}
+  % #{10 20 "Hello" "World"}
+  % #{:x :y :z}
+  \begin{block}{Sets}
+    \begin{Verbatim}[commandchars=\\\{\}]
+      \PY{o}{\PYZsh{}}\PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+
+      \PY{o}{\PYZsh{}}\PY{p}{\PYZob{}}\PY{l+m+mi}{10} \PY{l+m+mi}{20} \PY{l+s}{\PYZdq{}Hello\PYZdq{}} \PY{l+s}{\PYZdq{}World\PYZdq{}}\PY{p}{\PYZcb{}}
+
+      \PY{o}{\PYZsh{}}\PY{p}{\PYZob{}}\PY{l+s+ss}{:x} \PY{l+s+ss}{:y} \PY{l+s+ss}{:z}\PY{p}{\PYZcb{}}
+    \end{Verbatim}
+  \end{block}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \frametitle{ClojureScript}
+
+  \begin{itemize}
+  \item<1-> Clojure compiled to JavaScript
+  \end{itemize}
+
+
+\end{frame}
