@@ -1,0 +1,12 @@
+% \addtobeamertemplate{frametitle}{}{
+% \begin{textblock*}{120mm}(.92\textwidth, -0.72cm)
+% \includegraphics{frontend-logo-alpha-scaled}
+% \end{textblock*}}
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=3pt] at (current page.north east) {\includegraphics{frontend-logo-alpha-scaled}};
+\end{tikzpicture}}
+
+\setbeamertemplate{itemize item}{\color{zorange}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{orange}$\blacktriangleright$}
