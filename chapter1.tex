@@ -16,12 +16,20 @@
 
 \begin{frame}[fragile]
   \frametitle{Clojure Literals}
-
-  
+  \begin{Verbatim}[commandchars=\\\{\}]
+    \PY{l+m+mi}{42}    \PY{c+c1}{; decimal}
+    \PY{l+s}{\PYZdq{}abc\PYZdq{}} \PY{c+c1}{; string}
+    \PY{l+s+ss}{:alex} \PY{c+c1}{; keyword}
+    \PY{n+nv}{true}  \PY{c+c1}{; boolean}
+    \PY{n+nv}{nil}   \PY{c+c1}{; NULL\PYZhy{}value}
+    \PY{n+nb}{+ }\PY{n+nb}{\PYZhy{} }\PY{n+nv}{x} \PY{n+nv}{y} \PY{n+nv}{hello} \PY{n+nb}{cons }\PY{n+nb}{max }\PY{c+c1}{; symbols}
+  \end{Verbatim}
 \end{frame}
 
+
 \begin{frame}[fragile]
-  \frametitle{Clojure data structures: Lists and Vectors}
+  \frametitle{Clojure data structures}
+  \framesubtitle{Lists and Vectors}
 
   \begin{block}{Lists}
     % (1 "Antti" "Joensuu" + - 100)
@@ -48,7 +56,8 @@
 
 
 \begin{frame}[fragile]
-  \frametitle{Clojure data structures: Maps and Sets}
+  \frametitle{Clojure data structures}
+  \framesubtitle{Maps and Sets}
 
   \begin{block}{Maps}
     % {"Alex" 25 "Billy" 19 "Lauri" 23}
@@ -76,7 +85,89 @@
 \end{frame}
 
 
+\begin{frame}[fragile]
+  \frametitle{Clojure code as data}
+  \framesubtitle {Calling a function}
 
+  % (+ 1 2 3 4) ; 1 + 2 + 3 + 4
+  % => 10
+  % (- (+ 1 2 3 4) 3) ; 1 + 2 + 3 + 4 - 3
+  % => 7
+  % (* (- (+ 1 2 3 4) 3) 6) ; (1 + 2 + 3 + 4 - 3) * 6
+  % => 42
+
+  \begin{Verbatim}[commandchars=\\\{\}]
+    \PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{)} \PY{c+c1}{; 1 + 2 + 3 + 4}
+    \PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{10}
+
+    \PY{p}{(}\PY{n+nb}{\PYZhy{} }\PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{)} \PY{l+m+mi}{3}\PY{p}{)} \PY{c+c1}{; 1 + 2 + 3 + 4 \PYZhy{} 3}
+    \PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{7}
+
+    \PY{p}{(}\PY{n+nb}{* }\PY{p}{(}\PY{n+nb}{\PYZhy{} }\PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{)} \PY{l+m+mi}{3}\PY{p}{)} \PY{l+m+mi}{6}\PY{p}{)} \PY{c+c1}{; (1 + 2 + 3 + 4 \PYZhy{} 3) * 6}
+    \PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{42}
+  \end{Verbatim}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Clojure code as data}
+  \framesubtitle{Defining a function}
+
+  % (defn name-age-str [name age]
+  % (str name " is " age " years old"))
+  % => #’user/name-age-str
+  % (name-age-str "Antti" 25)
+  % => "Antti is 25 years old"
+  \begin{Verbatim}[commandchars=\\\{\}]
+    \PY{p}{(}\PY{k+kd}{defn }\PY{n+nv}{name\PYZhy{}age\PYZhy{}str} \PY{p}{[}\PY{n+nv}{name }\PY{n+nv}{age}\PY{p}{]}
+      \PY{p}{(}\PY{n+nb}{str }\PY{n+nv}{name }\PY{l+s}{\PYZdq{} is \PYZdq{}} \PY{n+nv}{age} \PY{l+s}{\PYZdq{} years old\PYZdq{}}\PY{p}{)}\PY{p}{)}
+    \PY{n+nv}{=\PYZgt{}} \PY{o}{\PYZsh{}}\PY{l+s+ss}{\PYZsq{}user/name-age-str}
+
+    \PY{p}{(}\PY{n+nf}{name\PYZhy{}age\PYZhy{}str} \PY{l+s}{\PYZdq{}Antti\PYZdq{}} \PY{l+m+mi}{25}\PY{p}{)}
+    \PY{n+nv}{=\PYZgt{}} \PY{l+s}{\PYZdq{}Antti is 25 years old\PYZdq{}}
+  \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Clojure control structures}
+
+  \begin{Verbatim}[commandchars=\\\{\}]
+    \PY{p}{(}\PY{k+kd}{defn }\PY{n+nv}{last\PYZhy{}name} \PY{p}{[}\PY{n+nv}{name}\PY{p}{]}
+      \PY{p}{(}\PY{k}{if }\PY{p}{(}\PY{n+nb}{= }\PY{n+nb}{name }\PY{l+s}{\PYZdq{}Alex\PYZdq{}}\PY{p}{)}
+        \PY{l+s}{\PYZdq{}Black\PYZdq{}}
+        \PY{l+s}{\PYZdq{}Unknown\PYZdq{}}\PY{p}{)}\PY{p}{)}
+
+    \PY{p}{(}\PY{n+nf}{last\PYZhy{}name} \PY{l+s}{\PYZdq{}Alex\PYZdq{}}\PY{p}{)}
+    \PY{n+nv}{=\PYZgt{}} \PY{l+s}{\PYZdq{}Black\PYZdq{}}
+
+    \PY{p}{(}\PY{n+nf}{last\PYZhy{}name} \PY{l+s}{\PYZdq{}Emilia\PYZdq{}}\PY{p}{)}
+    \PY{n+nv}{=\PYZgt{}} \PY{l+s}{\PYZdq{}Unknown\PYZdq{}}
+  \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Clojure laziness}
+  \begin{Verbatim}[commandchars=\\\{\}]
+
+    \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}
+    \PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4} \PY{l+m+mi}{5} \PY{l+m+mi}{6} \PY{l+m+mi}{7} \PY{l+m+mi}{8} \PY{l+m+mi}{9} \PY{l+m+mi}{10} \PY{l+m+mi}{11} \PY{n+nv}{...} \PY{c+c1}{; to infinity}
+
+    \PY{p}{(}\PY{n+nb}{take }\PY{l+m+mi}{10} \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}\PY{p}{)}
+    \PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4} \PY{l+m+mi}{5} \PY{l+m+mi}{6} \PY{l+m+mi}{7} \PY{l+m+mi}{8} \PY{l+m+mi}{9}\PY{p}{)}
+
+    \PY{p}{(}\PY{n+nb}{filter }\PY{p}{(}\PY{k}{fn }\PY{p}{[}\PY{n+nv}{x}\PY{p}{]} \PY{p}{(}\PY{n+nb}{zero? }\PY{p}{(}\PY{n+nf}{mod} \PY{n+nv}{x} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+            \PY{p}{(}\PY{n+nb}{take }\PY{l+m+mi}{10} \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+    \PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{2} \PY{l+m+mi}{4} \PY{l+m+mi}{6} \PY{l+m+mi}{8}\PY{p}{)}
+
+    \PY{p}{(}\PY{n+nb}{take }\PY{l+m+mi}{10} \PY{p}{(}\PY{n+nb}{filter }\PY{o}{\PYZsh{}}\PY{p}{(}\PY{n+nf}{even?} \PY{n+nv}{\PYZpc{}1}\PY{p}{)} \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+    \PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{2} \PY{l+m+mi}{4} \PY{l+m+mi}{6} \PY{l+m+mi}{8} \PY{l+m+mi}{10} \PY{l+m+mi}{12} \PY{l+m+mi}{14} \PY{l+m+mi}{16} \PY{l+m+mi}{18}\PY{p}{)}
+
+
+  \end{Verbatim}
+\end{frame}
 
 
 \begin{frame}
