@@ -27,14 +27,97 @@
 \end{frame}
 
 
-
 \begin{frame}
-  \frametitle{ClojureScript is Clojure compiled into JavaScript}
+  \frametitle{ClojureScript compiler}
 
   \begin{center}
-      {\includegraphics[scale=0.2]{js-gmail}}
+      {\includegraphics[scale=0.4]{cljs-compiler}}
   \end{center}
 
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Google Closure Tools}
+
+  \setbeamercovered{transparent}
+
+  \begin{itemize}[<+->]
+  \item <1-> \textbf{JavaScript optimizer}
+  \item <1-> \textbf{Comprehensive JavaScript library}
+  \item <2-> Templating system for both Java \& JavaScript
+  \item <2-> JavaScript style checker and style fixer
+  \item <2-> Enhanced stylesheet language
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Google Closure Compiler}
+  \framesubtitle{Optimizing the code}
+
+  \begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{name}\PY{p}{)} \PY{p}{\PYZob{}}
+        \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}Hello, \PYZsq{}} \PY{o}{+} \PY{n+nx}{name}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}\PYZlt{}Front end\PYZgt{} participants!\PYZsq{}}\PY{p}{)}\PY{p}{;}
+  \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Google Closure Compiler}
+
+  \begin{block}{Whitespace only}
+    \begin{Verbatim}[commandchars=\\\{\}]
+      \PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{name}\PY{p}{)}\PY{p}{\PYZob{}}\PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZdq{}}
+      \PY{o}{+}\PY{n+nx}{name}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}\PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \end{Verbatim}
+  \end{block}
+
+  \pause
+
+  \begin{block}{Simple}
+    \begin{Verbatim}[commandchars=\\\{\}]
+      \PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{a}\PY{p}{)}\PY{p}{\PYZob{}}\PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZdq{}}
+      \PY{o}{+}\PY{n+nx}{a}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}\PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \end{Verbatim}
+  \end{block}
+
+  \pause
+
+  \begin{block}{Advanced}
+    \begin{Verbatim}[commandchars=\\\{\}]
+      \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \end{Verbatim}
+
+  \end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Google Closure Compiler}
+  \framesubtitle{Optimizing the code}
+
+  \begin{block}{Before}
+  \begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{name}\PY{p}{)} \PY{p}{\PYZob{}}
+        \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}Hello, \PYZsq{}} \PY{o}{+} \PY{n+nx}{name}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}\PYZlt{}Front end\PYZgt{} participants!\PYZsq{}}\PY{p}{)}\PY{p}{;}
+  \end{Verbatim}
+  \end{block}
+
+  \pause
+
+  \begin{block}{After}
+    \begin{Verbatim}[commandchars=\\\{\}]
+      \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \end{Verbatim}
+
+  \end{block}
+\end{frame}
