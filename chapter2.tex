@@ -7,12 +7,60 @@
   \end{itemize}
 \end{frame}
 
+
+\begin{frame}[fragile]
+  \frametitle{Weird JavaScript}
+  \framesubtitle{Type system}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kd}{var} \PY{n+nx}{i} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{;}
+\PY{n+nx}{i} \PY{o}{=} \PY{n+nx}{i} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}\PYZdq{}}\PY{p}{;}
+\PY{n+nv}{=\PYZgt{}} \PY{l+s+s1}{\PYZsq{}1\PYZsq{}}
+
+\PY{n+nx}{i} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{;}
+\PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{0}
+\end{Verbatim}
+
+  \pause
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{typeof} \PY{k+kc}{NaN} \PY{o}{===} \PY{l+s+s2}{\PYZdq{}number\PYZdq{}}
+
+\PY{c+c1}{// NaN doesn\PYZsq{}t equal itself!}
+\PY{k+kc}{NaN} \PY{o}{!==} \PY{k+kc}{NaN}
+
+\PY{c+c1}{// This checks if x is NaN}
+\PY{n+nx}{x} \PY{o}{!==} \PY{n+nx}{x}
+\end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Weird JavaScript}
+  \framesubtitle{Function arguments}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nx}{myConcat}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}; \PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}Alex\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}Anna\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}Sini\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\PY{o}{\PYZgt{}} \PY{l+s+s1}{\PYZsq{}Alex; Anna; Sini\PYZsq{}}
+
+\end{Verbatim}
+
+\pause
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kd}{function} \PY{n+nx}{myConcat}\PY{p}{(}\PY{n+nx}{separator}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k+kd}{var} \PY{n+nx}{args} \PY{o}{=} \PY{n+nb}{Array}\PY{p}{.}\PY{n+nx}{prototype}\PY{p}{.}\PY{n+nx}{slice}\PY{p}{.}\PY{n+nx}{call}\PY{p}{(}\PY{n+nx}{arguments}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{n+nx}{args}\PY{p}{.}\PY{n+nx}{join}\PY{p}{(}\PY{n+nx}{separator}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+
+\end{frame}
+
+
 \begin{frame}
   \frametitle{Use JavaScript as a platform}
   \framesubtitle{and forget about the language}
 
   \begin{center}
-      {\includegraphics[scale=0.2]{js-compiled}}
+      {\includegraphics[scale=0.3]{js-compiled}}
   \end{center}
 \end{frame}
 
@@ -57,67 +105,68 @@
   \frametitle{Google Closure Compiler}
   \framesubtitle{Optimizing the code}
 
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{name}\PY{p}{)} \PY{p}{\PYZob{}}
-        \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}Hello, \PYZsq{}} \PY{o}{+} \PY{n+nx}{name}\PY{p}{)}\PY{p}{;}
-    \PY{p}{\PYZcb{}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{name}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}Hello, \PYZsq{}} \PY{o}{+} \PY{n+nx}{name}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
 
-    \PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}\PYZlt{}Front end\PYZgt{} participants!\PYZsq{}}\PY{p}{)}\PY{p}{;}
-  \end{Verbatim}
+\PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}\PYZlt{}Front end\PYZgt{} participants!\PYZsq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
 \end{frame}
-
-
-\begin{frame}[fragile]
-  \frametitle{Google Closure Compiler}
-
-  \begin{block}{Whitespace only}
-    \begin{Verbatim}[commandchars=\\\{\}]
-      \PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{name}\PY{p}{)}\PY{p}{\PYZob{}}\PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZdq{}}
-      \PY{o}{+}\PY{n+nx}{name}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}\PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
-    \end{Verbatim}
-  \end{block}
-
-  \pause
-
-  \begin{block}{Simple}
-    \begin{Verbatim}[commandchars=\\\{\}]
-      \PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{a}\PY{p}{)}\PY{p}{\PYZob{}}\PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZdq{}}
-      \PY{o}{+}\PY{n+nx}{a}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}\PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
-    \end{Verbatim}
-  \end{block}
-
-  \pause
-
-  \begin{block}{Advanced}
-    \begin{Verbatim}[commandchars=\\\{\}]
-      \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
-    \end{Verbatim}
-
-  \end{block}
-\end{frame}
-
 
 
 \begin{frame}[fragile]
   \frametitle{Google Closure Compiler}
   \framesubtitle{Optimizing the code}
 
-  \begin{block}{Before}
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{name}\PY{p}{)} \PY{p}{\PYZob{}}
-        \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}Hello, \PYZsq{}} \PY{o}{+} \PY{n+nx}{name}\PY{p}{)}\PY{p}{;}
-    \PY{p}{\PYZcb{}}
+  \begin{block}{Whitespace only}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{name}\PY{p}{)}\PY{p}{\PYZob{}}\PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZdq{}}
+\PY{o}{+}\PY{n+nx}{name}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}\PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+  \end{block}
 
-    \PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}\PYZlt{}Front end\PYZgt{} participants!\PYZsq{}}\PY{p}{)}\PY{p}{;}
-  \end{Verbatim}
+  \pause
+
+  \begin{block}{Simple}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{a}\PY{p}{)}\PY{p}{\PYZob{}}\PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZdq{}}
+\PY{o}{+}\PY{n+nx}{a}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}\PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+  \end{block}
+
+  \pause
+
+  \begin{block}{Advanced}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+
+  \end{block}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Google Closure Compiler}
+  \framesubtitle{Advanced optimization}
+
+  \begin{block}{Before}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kd}{function} \PY{n+nx}{hello}\PY{p}{(}\PY{n+nx}{name}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}Hello, \PYZsq{}} \PY{o}{+} \PY{n+nx}{name}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{n+nx}{hello}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}\PYZlt{}Front end\PYZgt{} participants!\PYZsq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
   \end{block}
 
   \pause
 
   \begin{block}{After}
-    \begin{Verbatim}[commandchars=\\\{\}]
-      \PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
-    \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nx}{alert}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}Hello, \PYZlt{}Front end\PYZgt{} participants!\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
 
   \end{block}
 \end{frame}
