@@ -16,14 +16,14 @@
 
 \begin{frame}[fragile]
   \frametitle{Clojure Literals}
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{l+m+mi}{42}    \PY{c+c1}{; decimal}
-    \PY{l+s}{\PYZdq{}abc\PYZdq{}} \PY{c+c1}{; string}
-    \PY{l+s+ss}{:alex} \PY{c+c1}{; keyword}
-    \PY{n+nv}{true}  \PY{c+c1}{; boolean}
-    \PY{n+nv}{nil}   \PY{c+c1}{; NULL\PYZhy{}value}
-    \PY{n+nb}{+ }\PY{n+nb}{\PYZhy{} }\PY{n+nv}{x} \PY{n+nv}{y} \PY{n+nv}{hello} \PY{n+nb}{cons }\PY{n+nb}{max }\PY{c+c1}{; symbols}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{l+m+mi}{42}    \PY{c+c1}{; decimal}
+\PY{l+s}{\PYZdq{}abc\PYZdq{}} \PY{c+c1}{; string}
+\PY{l+s+ss}{:alex} \PY{c+c1}{; keyword}
+\PY{n+nv}{true}  \PY{c+c1}{; boolean}
+\PY{n+nv}{nil}   \PY{c+c1}{; NULL\PYZhy{}value}
+\PY{n+nb}{+ }\PY{n+nb}{\PYZhy{} }\PY{n+nv}{x} \PY{n+nv}{y} \PY{n+nv}{hello} \PY{n+nb}{cons }\PY{n+nb}{max }\PY{c+c1}{; symbols}
+\end{Verbatim}
 \end{frame}
 
 
@@ -34,23 +34,23 @@
   \begin{block}{Lists}
     % (1 "Antti" "Joensuu" + - 100)
     % (+ 1 10 111)
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{p}{)}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{p}{)}
 
-    \PY{p}{(}\PY{l+m+mi}{1} \PY{l+s}{\PYZdq{}Antti\PYZdq{}} \PY{l+s}{\PYZdq{}Joensuu\PYZdq{}} \PY{n+nb}{+ }\PY{n+nb}{\PYZhy{} }\PY{l+m+mi}{100}\PY{p}{)}
+\PY{p}{(}\PY{l+m+mi}{1} \PY{l+s}{\PYZdq{}Antti\PYZdq{}} \PY{l+s}{\PYZdq{}Joensuu\PYZdq{}} \PY{n+nb}{+ }\PY{n+nb}{\PYZhy{} }\PY{l+m+mi}{100}\PY{p}{)}
 
-    \PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{10} \PY{l+m+mi}{100}\PY{p}{)}
-  \end{Verbatim}
+\PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{10} \PY{l+m+mi}{100}\PY{p}{)}
+\end{Verbatim}
   \end{block}
 
   \begin{block}{Vectors}
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{[}\PY{p}{]}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{[}\PY{p}{]}
 
-    \PY{p}{[}\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{]}
+\PY{p}{[}\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{]}
 
-    \PY{p}{[}\PY{l+s}{\PYZdq{}Hello\PYZdq{}} \PY{l+s}{\PYZdq{}World\PYZdq{}} \PY{n+nv}{true} \PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3}\PY{p}{]}
-  \end{Verbatim}
+\PY{p}{[}\PY{l+s}{\PYZdq{}Hello\PYZdq{}} \PY{l+s}{\PYZdq{}World\PYZdq{}} \PY{n+nv}{true} \PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3}\PY{p}{]}
+\end{Verbatim}
   \end{block}
 \end{frame}
 
@@ -61,26 +61,26 @@
 
   \begin{block}{Maps}
     % {"Alex" 25 "Billy" 19 "Lauri" 23}
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
 
-    \PY{p}{\PYZob{}}\PY{l+s}{\PYZdq{}Alex\PYZdq{}} \PY{l+m+mi}{25} \PY{l+s}{\PYZdq{}Billy\PYZdq{}} \PY{l+m+mi}{19} \PY{l+s}{\PYZdq{}Lauri\PYZdq{}} \PY{l+m+mi}{23}\PY{p}{\PYZcb{}}
+\PY{p}{\PYZob{}}\PY{l+s}{\PYZdq{}Alex\PYZdq{}} \PY{l+m+mi}{25} \PY{l+s}{\PYZdq{}Billy\PYZdq{}} \PY{l+m+mi}{19} \PY{l+s}{\PYZdq{}Lauri\PYZdq{}} \PY{l+m+mi}{23}\PY{p}{\PYZcb{}}
 
-    \PY{p}{\PYZob{}}\PY{l+s+ss}{:name} \PY{l+s}{\PYZdq{}Alex\PYZdq{}} \PY{l+s+ss}{:age} \PY{l+m+mi}{25} \PY{l+s+ss}{:student} \PY{n+nv}{true}\PY{p}{\PYZcb{}}
-  \end{Verbatim}
+\PY{p}{\PYZob{}}\PY{l+s+ss}{:name} \PY{l+s}{\PYZdq{}Alex\PYZdq{}} \PY{l+s+ss}{:age} \PY{l+m+mi}{25} \PY{l+s+ss}{:student} \PY{n+nv}{true}\PY{p}{\PYZcb{}}
+\end{Verbatim}
   \end{block}
 
   % #{}
   % #{10 20 "Hello" "World"}
   % #{:x :y :z}
   \begin{block}{Sets}
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{o}{\PYZsh{}}\PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZsh{}}\PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
 
-    \PY{o}{\PYZsh{}}\PY{p}{\PYZob{}}\PY{l+m+mi}{10} \PY{l+m+mi}{20} \PY{l+s}{\PYZdq{}Hello\PYZdq{}} \PY{l+s}{\PYZdq{}World\PYZdq{}}\PY{p}{\PYZcb{}}
+\PY{o}{\PYZsh{}}\PY{p}{\PYZob{}}\PY{l+m+mi}{10} \PY{l+m+mi}{20} \PY{l+s}{\PYZdq{}Hello\PYZdq{}} \PY{l+s}{\PYZdq{}World\PYZdq{}}\PY{p}{\PYZcb{}}
 
-    \PY{o}{\PYZsh{}}\PY{p}{\PYZob{}}\PY{l+s+ss}{:x} \PY{l+s+ss}{:y} \PY{l+s+ss}{:z}\PY{p}{\PYZcb{}}
-  \end{Verbatim}
+\PY{o}{\PYZsh{}}\PY{p}{\PYZob{}}\PY{l+s+ss}{:x} \PY{l+s+ss}{:y} \PY{l+s+ss}{:z}\PY{p}{\PYZcb{}}
+\end{Verbatim}
   \end{block}
 \end{frame}
 
@@ -96,22 +96,22 @@
   % (* (- (+ 1 2 3 4) 3) 6) ; (1 + 2 + 3 + 4 - 3) * 6
   % => 42
 
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{)} \PY{c+c1}{; 1 + 2 + 3 + 4}
-    \PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{10}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{)} \PY{c+c1}{; 1 + 2 + 3 + 4}
+\PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{10}
+\end{Verbatim}
   \pause
 
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{n+nb}{\PYZhy{} }\PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{)} \PY{l+m+mi}{3}\PY{p}{)} \PY{c+c1}{; 1 + 2 + 3 + 4 \PYZhy{} 3}
-    \PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{7}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n+nb}{\PYZhy{} }\PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{)} \PY{l+m+mi}{3}\PY{p}{)} \PY{c+c1}{; 1 + 2 + 3 + 4 \PYZhy{} 3}
+\PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{7}
+\end{Verbatim}
 
   \pause
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{n+nb}{* }\PY{p}{(}\PY{n+nb}{\PYZhy{} }\PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{)} \PY{l+m+mi}{3}\PY{p}{)} \PY{l+m+mi}{6}\PY{p}{)} \PY{c+c1}{; (1 + 2 + 3 + 4 \PYZhy{} 3) * 6}
-    \PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{42}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n+nb}{* }\PY{p}{(}\PY{n+nb}{\PYZhy{} }\PY{p}{(}\PY{n+nb}{+ }\PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4}\PY{p}{)} \PY{l+m+mi}{3}\PY{p}{)} \PY{l+m+mi}{6}\PY{p}{)} \PY{c+c1}{; (1 + 2 + 3 + 4 \PYZhy{} 3) * 6}
+\PY{n+nv}{=\PYZgt{}} \PY{l+m+mi}{42}
+\end{Verbatim}
 \end{frame}
 
 
@@ -125,70 +125,82 @@
   % => #’user/name-age-str
   % (name-age-str "Antti" 25)
   % => "Antti is 25 years old"
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{k+kd}{defn }\PY{n+nv}{name\PYZhy{}age\PYZhy{}str} \PY{p}{[}\PY{n+nv}{name }\PY{n+nv}{age}\PY{p}{]}
-      \PY{p}{(}\PY{n+nb}{str }\PY{n+nv}{name }\PY{l+s}{\PYZdq{} is \PYZdq{}} \PY{n+nv}{age} \PY{l+s}{\PYZdq{} years old\PYZdq{}}\PY{p}{)}\PY{p}{)}
-    \PY{n+nv}{=\PYZgt{}} \PY{o}{\PYZsh{}}\PY{l+s+ss}{\PYZsq{}user/name-age-str}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{k+kd}{defn }\PY{n+nv}{name\PYZhy{}age\PYZhy{}str} \PY{p}{[}\PY{n+nv}{name }\PY{n+nv}{age}\PY{p}{]}
+  \PY{p}{(}\PY{n+nb}{str }\PY{n+nv}{name }\PY{l+s}{\PYZdq{} is \PYZdq{}} \PY{n+nv}{age} \PY{l+s}{\PYZdq{} years old\PYZdq{}}\PY{p}{)}\PY{p}{)}
+\PY{n+nv}{=\PYZgt{}} \PY{o}{\PYZsh{}}\PY{l+s+ss}{\PYZsq{}user/name-age-str}
+\end{Verbatim}
 
   \pause
 
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{n+nf}{name\PYZhy{}age\PYZhy{}str} \PY{l+s}{\PYZdq{}Antti\PYZdq{}} \PY{l+m+mi}{25}\PY{p}{)}
-    \PY{n+nv}{=\PYZgt{}} \PY{l+s}{\PYZdq{}Antti is 25 years old\PYZdq{}}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n+nf}{name\PYZhy{}age\PYZhy{}str} \PY{l+s}{\PYZdq{}Antti\PYZdq{}} \PY{l+m+mi}{25}\PY{p}{)}
+\PY{n+nv}{=\PYZgt{}} \PY{l+s}{\PYZdq{}Antti is 25 years old\PYZdq{}}
+\end{Verbatim}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Clojure namespaces}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{k+kd}{ns }\PY{n+nv}{frontend.app.main}
+  \PY{p}{(}\PY{l+s+ss}{:require} \PY{p}{[}\PY{n+nv}{dommy.core} \PY{l+s+ss}{:as} \PY{n+nv}{dommy}\PY{p}{]}\PY{p}{)}
+  \PY{p}{(}\PY{l+s+ss}{:require\PYZhy{}macros} \PY{p}{[}\PY{n+nv}{dommy.macros} \PY{l+s+ss}{:refer} \PY{p}{[}\PY{n+nv}{node}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+
+\PY{p}{(}\PY{n+nf}{js/alert} \PY{l+s}{\PYZdq{}Hello world\PYZdq{}}\PY{n+nv}{!}\PY{p}{)}
+\end{Verbatim}
 \end{frame}
 
 
 \begin{frame}[fragile]
   \frametitle{Clojure control structures}
 
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{k+kd}{defn }\PY{n+nv}{last\PYZhy{}name} \PY{p}{[}\PY{n+nv}{name}\PY{p}{]}
-      \PY{p}{(}\PY{k}{if }\PY{p}{(}\PY{n+nb}{= }\PY{n+nb}{name }\PY{l+s}{\PYZdq{}Alex\PYZdq{}}\PY{p}{)}
-        \PY{l+s}{\PYZdq{}Black\PYZdq{}}
-        \PY{l+s}{\PYZdq{}Unknown\PYZdq{}}\PY{p}{)}\PY{p}{)}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{k+kd}{defn }\PY{n+nv}{last\PYZhy{}name} \PY{p}{[}\PY{n+nv}{name}\PY{p}{]}
+  \PY{p}{(}\PY{k}{if }\PY{p}{(}\PY{n+nb}{= }\PY{n+nb}{name }\PY{l+s}{\PYZdq{}Alex\PYZdq{}}\PY{p}{)}
+    \PY{l+s}{\PYZdq{}Black\PYZdq{}}
+    \PY{l+s}{\PYZdq{}Unknown\PYZdq{}}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
 
   \pause
 
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{n+nf}{last\PYZhy{}name} \PY{l+s}{\PYZdq{}Alex\PYZdq{}}\PY{p}{)}
-    \PY{n+nv}{=\PYZgt{}} \PY{l+s}{\PYZdq{}Black\PYZdq{}}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n+nf}{last\PYZhy{}name} \PY{l+s}{\PYZdq{}Alex\PYZdq{}}\PY{p}{)}
+\PY{n+nv}{=\PYZgt{}} \PY{l+s}{\PYZdq{}Black\PYZdq{}}
 
-    \PY{p}{(}\PY{n+nf}{last\PYZhy{}name} \PY{l+s}{\PYZdq{}Emilia\PYZdq{}}\PY{p}{)}
-    \PY{n+nv}{=\PYZgt{}} \PY{l+s}{\PYZdq{}Unknown\PYZdq{}}
-  \end{Verbatim}
+\PY{p}{(}\PY{n+nf}{last\PYZhy{}name} \PY{l+s}{\PYZdq{}Emilia\PYZdq{}}\PY{p}{)}
+\PY{n+nv}{=\PYZgt{}} \PY{l+s}{\PYZdq{}Unknown\PYZdq{}}
+\end{Verbatim}
 \end{frame}
 
 
 \begin{frame}[fragile]
   \frametitle{Clojure laziness}
-  \begin{Verbatim}[commandchars=\\\{\}]
-
-    \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}
-    \PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4} \PY{l+m+mi}{5} \PY{l+m+mi}{6} \PY{l+m+mi}{7} \PY{l+m+mi}{8} \PY{l+m+mi}{9} \PY{l+m+mi}{10} \PY{l+m+mi}{11} \PY{n+nv}{...} \PY{c+c1}{; to infinity}
-  \end{Verbatim}
-
-  \pause
-
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{n+nb}{take }\PY{l+m+mi}{10} \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}\PY{p}{)}
-    \PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4} \PY{l+m+mi}{5} \PY{l+m+mi}{6} \PY{l+m+mi}{7} \PY{l+m+mi}{8} \PY{l+m+mi}{9}\PY{p}{)}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n+nf}{range}\PY{p}{)}
+\PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4} \PY{l+m+mi}{5} \PY{l+m+mi}{6} \PY{l+m+mi}{7} \PY{l+m+mi}{8} \PY{l+m+mi}{9} \PY{l+m+mi}{10} \PY{l+m+mi}{11} \PY{n+nv}{...} \PY{c+c1}{; to infinity}
+\end{Verbatim}
 
   \pause
 
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{n+nb}{filter }\PY{p}{(}\PY{k}{fn }\PY{p}{[}\PY{n+nv}{x}\PY{p}{]} \PY{p}{(}\PY{n+nb}{zero? }\PY{p}{(}\PY{n+nf}{mod} \PY{n+nv}{x} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-            \PY{p}{(}\PY{n+nb}{take }\PY{l+m+mi}{10} \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-    \PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{2} \PY{l+m+mi}{4} \PY{l+m+mi}{6} \PY{l+m+mi}{8}\PY{p}{)}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n+nb}{take }\PY{l+m+mi}{10} \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}\PY{p}{)}
+\PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{1} \PY{l+m+mi}{2} \PY{l+m+mi}{3} \PY{l+m+mi}{4} \PY{l+m+mi}{5} \PY{l+m+mi}{6} \PY{l+m+mi}{7} \PY{l+m+mi}{8} \PY{l+m+mi}{9}\PY{p}{)}
+\end{Verbatim}
 
   \pause
 
-  \begin{Verbatim}[commandchars=\\\{\}]
-    \PY{p}{(}\PY{n+nb}{take }\PY{l+m+mi}{10} \PY{p}{(}\PY{n+nb}{filter }\PY{o}{\PYZsh{}}\PY{p}{(}\PY{n+nf}{even?} \PY{n+nv}{\PYZpc{}1}\PY{p}{)} \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-    \PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{2} \PY{l+m+mi}{4} \PY{l+m+mi}{6} \PY{l+m+mi}{8} \PY{l+m+mi}{10} \PY{l+m+mi}{12} \PY{l+m+mi}{14} \PY{l+m+mi}{16} \PY{l+m+mi}{18}\PY{p}{)}
-  \end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n+nb}{filter }\PY{p}{(}\PY{k}{fn }\PY{p}{[}\PY{n+nv}{x}\PY{p}{]} \PY{p}{(}\PY{n+nb}{zero? }\PY{p}{(}\PY{n+nf}{mod} \PY{n+nv}{x} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{)} \PY{p}{(}\PY{n+nb}{take }\PY{l+m+mi}{10} \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{2} \PY{l+m+mi}{4} \PY{l+m+mi}{6} \PY{l+m+mi}{8}\PY{p}{)}
+\end{Verbatim}
+
+  \pause
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n+nb}{take }\PY{l+m+mi}{10} \PY{p}{(}\PY{n+nb}{filter }\PY{o}{\PYZsh{}}\PY{p}{(}\PY{n+nf}{even?} \PY{n+nv}{\PYZpc{}1}\PY{p}{)} \PY{p}{(}\PY{n+nf}{range}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nv}{=\PYZgt{}} \PY{p}{(}\PY{l+m+mi}{0} \PY{l+m+mi}{2} \PY{l+m+mi}{4} \PY{l+m+mi}{6} \PY{l+m+mi}{8} \PY{l+m+mi}{10} \PY{l+m+mi}{12} \PY{l+m+mi}{14} \PY{l+m+mi}{16} \PY{l+m+mi}{18}\PY{p}{)}
+\end{Verbatim}
 \end{frame}
