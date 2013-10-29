@@ -1,0 +1,50 @@
+\begin{frame}
+  \frametitle{Tools}
+
+  \setbeamercovered{transparent}
+
+  \begin{itemize}
+  \item<1-> Build system
+  \item<2-> Read-eval-print loop (REPL)
+  \item<3-> Debugger
+  \item<4-> Profiler
+  \end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Tools}
+  \frametitle{The Leiningen build system}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{k+kd}{defproject }\PY{n+nv}{kiana\PYZhy{}client} \PY{l+s}{\PYZdq{}0.0.1\PYZdq{}}
+  \PY{l+s+ss}{:description} \PY{l+s}{\PYZdq{}Project \PYZsq{}kiana\PYZsq{} client side\PYZdq{}}
+  \PY{l+s+ss}{:source\PYZhy{}paths} \PY{p}{[}\PY{l+s}{\PYZdq{}clj\PYZdq{}}\PY{p}{]}
+  \PY{l+s+ss}{:dependencies} \PY{p}{[}\PY{p}{[}\PY{n+nv}{org.clojure/clojure} \PY{l+s}{\PYZdq{}1.5.1\PYZdq{}}\PY{p}{]}
+                 \PY{p}{[}\PY{n+nv}{prismatic/dommy} \PY{l+s}{\PYZdq{}0.1.1\PYZdq{}}\PY{p}{]}
+                 \PY{p}{[}\PY{n+nv}{hiccup} \PY{l+s}{\PYZdq{}1.0.0\PYZdq{}}\PY{p}{]}\PY{p}{]}
+  \PY{l+s+ss}{:plugins} \PY{p}{[}\PY{p}{[}\PY{n+nv}{lein\PYZhy{}cljsbuild} \PY{l+s}{\PYZdq{}0.3.2\PYZdq{}}\PY{p}{]}
+            \PY{p}{[}\PY{n+nv}{lein\PYZhy{}ring} \PY{l+s}{\PYZdq{}0.7.0\PYZdq{}}\PY{p}{]}\PY{p}{]}
+  \PY{l+s+ss}{:cljsbuild} \PY{p}{\PYZob{}}
+
+    \PY{c+c1}{; ClojureScript project stuff goes here}
+    \PY{c+c1}{; ...}
+    \PY{c+c1}{; ...}
+  \PY{p}{\PYZcb{}}\PY{p}{)}
+\end{Verbatim}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Tools}
+  \frametitle{Debugger and Profiler}
+
+  \begin{center}
+      {\includegraphics[scale=0.3]{debug-screenshot}}
+  \end{center}
+
+\end{frame}
